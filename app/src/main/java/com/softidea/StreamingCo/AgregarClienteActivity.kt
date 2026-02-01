@@ -30,6 +30,22 @@ class AgregarClienteActivity : AppCompatActivity() {
         val edtNombre = findViewById<EditText>(R.id.edtNombre)
         edtCorreo = findViewById(R.id.edtCorreo)
         edtContrasena = findViewById(R.id.edtContrasena)
+
+        val correoRecibido = intent.getStringExtra("correo")
+        val contrasenaRecibida = intent.getStringExtra("contrasena")
+        val plataformaRecibida = intent.getStringExtra("plataforma")
+
+        if (!correoRecibido.isNullOrEmpty()) {
+            edtCorreo.setText(correoRecibido)
+            edtCorreo.isEnabled = false
+        }
+
+        if (!contrasenaRecibida.isNullOrEmpty()) {
+            edtContrasena.setText(contrasenaRecibida)
+            edtContrasena.isEnabled = false
+        }
+
+
         val edtFechaCompra = findViewById<EditText>(R.id.edtFechaCompra)
         val edtPrecio = findViewById<EditText>(R.id.edtPrecio)
         val rbCompleta = findViewById<RadioButton>(R.id.rbCompleta)

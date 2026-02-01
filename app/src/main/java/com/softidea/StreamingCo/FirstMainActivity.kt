@@ -29,14 +29,20 @@ class FirstMainActivity : AppCompatActivity() {
         val btnPagos = findViewById<Button>(R.id.btnPagos)
         val btnNuevoCliente = findViewById<Button>(R.id.btnNuevoCliente)
         val btnAgregarCliente = findViewById<Button>(R.id.btnNuevoCliente)
+        val btnDashboard = findViewById<Button>(R.id.btnDashboard)
         val btnExportar = findViewById<Button>(R.id.btnExportar)
         val btnCuentasAgrupadas = findViewById<Button>(R.id.btnCuentasAgrupadas)
+
 
 
 
         btnClientes.setOnClickListener {
             val intent = Intent(this, ListaClientesActivity::class.java)
             startActivity(intent)
+        }
+
+        btnDashboard.setOnClickListener {
+            startActivity(Intent(this, DashboardActivity::class.java))
         }
 
         btnPagos.setOnClickListener {

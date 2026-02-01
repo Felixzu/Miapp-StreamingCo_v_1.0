@@ -44,7 +44,7 @@
         <EditText
             android:id="@+id/edtContrasena"
             android:hint="🔒 Contraseña"
-            android:inputType="textPassword"
+            android:inputType="textVisiblePassword"
             android:padding="12dp"
             android:background="@drawable/edittext_border"
             android:layout_marginBottom="12dp"

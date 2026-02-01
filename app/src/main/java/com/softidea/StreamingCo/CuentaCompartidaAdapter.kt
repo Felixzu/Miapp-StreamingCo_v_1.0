@@ -48,6 +48,8 @@ class CuentaCompartidaAdapter(
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val btnDisponibilidadPantallas: Button = view.findViewById(R.id.btnDisponibilidadPantallas)
+
+        val btnAgregarCliente: ImageButton = view.findViewById(R.id.btnAgregarCliente)
         val tvCuenta: TextView = view.findViewById(R.id.tvCuenta)
         val contenedorClientes: LinearLayout = view.findViewById(R.id.contenedorClientes)
         val btnEditar: ImageButton = view.findViewById(R.id.btnEditarCuenta)
@@ -71,6 +73,27 @@ class CuentaCompartidaAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val cuenta = cuentasFiltradas[position]
 
+        holder.btnAgregarCliente.setOnClickListener {
+
+            val esCuentaCompleta =
+                cuenta.clientes.firstOrNull()?.tipoCuenta.equals("Completa", true)
+
+            if (esCuentaCompleta) {
+                Toast.makeText(
+                    context,
+                    "❌ Esta cuenta es COMPLETA, no se pueden agregar pantallas",
+                    Toast.LENGTH_LONG
+                ).show()
+                return@setOnClickListener
+            }
+
+            val intent = android.content.Intent(context, AgregarClienteActivity::class.java)
+            intent.putExtra("correo", cuenta.correo)
+            intent.putExtra("contrasena", cuenta.contrasena)
+            intent.putExtra("plataforma", cuenta.plataforma)
+
+            context.startActivity(intent)
+        }
 
 
 

@@ -60,10 +60,20 @@ class VencidosActivity : AppCompatActivity() {
                     val cliente = doc.toObject(Cliente::class.java)
                     cliente.documentId = doc.id
 
-                    val fechaVenc = formato.parse(cliente.fechaVencimiento)
-                    if (fechaVenc != null && fechaVenc.before(hoy)) {
-                        listaVencidos.add(cliente)
+                    val fechaVencStr = cliente.fechaVencimiento
+
+                    if (!fechaVencStr.isNullOrBlank()) {
+                        try {
+                            val fechaVenc = formato.parse(fechaVencStr)
+                            if (fechaVenc != null && fechaVenc.before(hoy)) {
+                                listaVencidos.add(cliente)
+                            }
+                        } catch (e: Exception) {
+                            e.printStackTrace()
+                            // Puedes decidir ignorarlo o reportar el error
+                        }
                     }
+
                 }
 
                 adapter.notifyDataSetChanged()
@@ -93,23 +103,50 @@ class VencidosActivity : AppCompatActivity() {
     private fun renovarCliente(cliente: Cliente) {
         val formato = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
         val calendar = Calendar.getInstance()
-        val nuevaFechaCompra = formato.format(calendar.time)
-        calendar.add(Calendar.DAY_OF_MONTH, 30)
-        val nuevaFechaVencimiento = formato.format(calendar.time)
 
-        val actualizacion = mapOf(
-            "fechaCompra" to nuevaFechaCompra,
-            "fechaVencimiento" to nuevaFechaVencimiento
-        )
+        try {
+            // --- FECHA DE COMPRA ---
+            // Obtenemos el día original de la fecha de compra del cliente
+            val fechaCompraOriginal = formato.parse(cliente.fechaCompra)
+            val calendarCompra = Calendar.getInstance()
 
-        db.collection("clientes").document(cliente.documentId)
-            .update(actualizacion)
-            .addOnSuccessListener {
-                listaVencidos.remove(cliente)
-                adapter.notifyDataSetChanged()
-                Toast.makeText(this, "${cliente.nombre} renovado", Toast.LENGTH_SHORT).show()
+            if (fechaCompraOriginal != null) {
+                // Tomamos el día del cliente
+                val diaCompra = Calendar.getInstance().apply {
+                    time = fechaCompraOriginal
+                }.get(Calendar.DAY_OF_MONTH)
+
+                // Establecemos ese mismo día, pero en el mes y año actuales
+                calendarCompra.set(Calendar.DAY_OF_MONTH, diaCompra)
+                // (si el mes actual tiene menos días, se ajusta automáticamente al último día válido)
+                val nuevaFechaCompra = formato.format(calendarCompra.time)
+
+                // --- FECHA DE VENCIMIENTO ---
+                // Partimos de la nueva fecha de compra
+                calendarCompra.add(Calendar.MONTH, 1)
+                val nuevaFechaVencimiento = formato.format(calendarCompra.time)
+
+                // --- ACTUALIZAMOS EN FIRESTORE ---
+                val actualizacion = mapOf(
+                    "fechaCompra" to nuevaFechaCompra,
+                    "fechaVencimiento" to nuevaFechaVencimiento
+                )
+
+                db.collection("clientes").document(cliente.documentId)
+                    .update(actualizacion)
+                    .addOnSuccessListener {
+                        listaVencidos.remove(cliente)
+                        adapter.notifyDataSetChanged()
+                        Toast.makeText(this, "${cliente.nombre} renovado", Toast.LENGTH_SHORT).show()
+                    }
             }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Toast.makeText(this, "Error al renovar cliente", Toast.LENGTH_SHORT).show()
+        }
     }
+
+
 
     private fun enviarMensajesMasivos(lista: List<Cliente>) {
         if (lista.isEmpty()) {

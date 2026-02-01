@@ -311,6 +311,7 @@ class DatabaseHelperInicio(private val context: Context):
                 )
             )
             .addOnSuccessListener { Log.d("Firestore", "Fechas actualizadas en Firestore") }
+            .addOnSuccessListener { Log.d("Firestore", "Fechas actualizadas en Firestore") }
             .addOnFailureListener { Log.e("Firestore", "Error al actualizar Firestore", it) }
 
         return db.update("clientes", values, "id=?", arrayOf(cliente.id.toString())) > 0

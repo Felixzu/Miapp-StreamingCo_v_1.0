@@ -107,11 +107,12 @@ class ListaClientesAgrupadosActivity : AppCompatActivity() {
     }
 
 
-
     private fun renovarCliente(cliente: Cliente) {
+
         val formato = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
         val calendar = Calendar.getInstance()
-        val nuevaFechaCompra = formato.format(calendar.time)
+        val nuevaFechaCompra = formato.format(Calendar.getInstance().time)
+
         calendar.add(Calendar.DAY_OF_MONTH, 30)
         val nuevaFechaVencimiento = formato.format(calendar.time)
 
@@ -121,6 +122,7 @@ class ListaClientesAgrupadosActivity : AppCompatActivity() {
         dbHelper.actualizarFechasCliente(cliente.id, nuevaFechaCompra, nuevaFechaVencimiento)
         actualizarLista()
         Toast.makeText(this, "Renovado ${cliente.nombre}", Toast.LENGTH_SHORT).show()
+
     }
 
     private fun editarCliente(cliente: Cliente) {

@@ -59,7 +59,6 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.firebase.database.ktx)
 
-
     implementation(libs.firebaseAuth)
     implementation(libs.firebaseStorage)
     implementation(libs.firebaseStore)
