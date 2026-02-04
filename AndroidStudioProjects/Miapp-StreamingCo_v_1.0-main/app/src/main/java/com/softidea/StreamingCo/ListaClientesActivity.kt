@@ -257,7 +257,7 @@ class ListaClientesActivity : AppCompatActivity() {
                 if (nuevoCorreo.isNotBlank() &&
                     nuevaContrasena.isNotBlank() &&
                     nuevaObservacion.isNotBlank() &&
-                    nuevaFechaCompra.isNotBlank()
+                    nuevaFechaCompra.isNotBlank() //Se agrega correctamente
                 ) {
                     // Actualizamos en memoria
                     cliente.correo = nuevoCorreo
