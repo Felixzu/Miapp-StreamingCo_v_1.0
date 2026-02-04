@@ -1,0 +1,8 @@
+<!-- res/drawable/fondo_redondeado.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid android:color="#0523E8" /> <!-- Color de fondo (azul) -->
+    <corners android:radius="16dp" /> <!-- Radio para esquinas redondeadas -->
+
+</shape>

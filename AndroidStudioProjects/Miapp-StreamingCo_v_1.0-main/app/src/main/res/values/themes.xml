@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Operaciones_Pildoras" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/grey</item>
+        <item name="colorPrimaryVariant">@color/grey</item>
+        <item name="android:statusBarColor">@color/grey</item>
+
+
+    </style>
+
+    <style name="Theme.Operaciones_Pildoras" parent="Base.Theme.Operaciones_Pildoras" />
+</resources>

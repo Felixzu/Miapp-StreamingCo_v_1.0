@@ -1,0 +1,205 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/fondo_login3"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/fondo_tarjeta"
+        android:elevation="4dp"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Agregar Cliente"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edtNombre"
+            android:hint="👤 Nombre del cliente"
+            android:padding="12dp"
+            android:background="@drawable/edittext_border"
+            android:layout_marginBottom="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edtCorreo"
+            android:hint="📧 Correo de cuenta"
+            android:padding="12dp"
+            android:background="@drawable/edittext_border"
+            android:layout_marginBottom="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edtContrasena"
+            android:hint="🔒 Contraseña"
+            android:inputType="textVisiblePassword"
+            android:padding="12dp"
+            android:background="@drawable/edittext_border"
+            android:layout_marginBottom="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/etTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Teléfono (Ej: 573001234567)"
+            android:inputType="phone"
+            android:layout_marginTop="8dp"/>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edtFechaCompra"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Fecha de compra"
+                android:focusable="false" />
+
+            <Button
+                android:id="@+id/btnCambiarFecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cambiar" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:background="@drawable/bg_spinner_container"
+            android:gravity="center_vertical"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            android:clipToPadding="false">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Duración:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginEnd="12dp" />
+
+            <Spinner
+                android:id="@+id/spinnerMeses"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_spinner_moderno"
+                android:paddingStart="16dp"
+                android:paddingEnd="48dp"
+                android:textAlignment="viewStart"
+                android:gravity="center_vertical"
+                android:spinnerMode="dropdown"/>
+        </LinearLayout>
+
+
+
+
+
+
+        <EditText
+            android:id="@+id/edtPrecio"
+            android:hint="💵 Precio de venta"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:background="@drawable/edittext_border"
+            android:layout_marginBottom="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/spinnerPlataforma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Light"
+            android:backgroundTint="@color/white"
+            />
+
+
+
+
+        <TextView
+            android:text="Tipo de cuenta:"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioGroup
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rbCompleta"
+                android:text="Completa"
+                android:layout_marginEnd="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/rbPantalla"
+                android:text="Pantalla"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tvPantallasDisponibles"
+            android:text="Pantallas disponibles: 4"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_green_dark"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+        <EditText
+            android:id="@+id/edtObservaciones"
+            android:hint="📝 Observaciones"
+            android:padding="12dp"
+            android:background="@drawable/edittext_border"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:text="✔ Guardar Cliente"
+            android:backgroundTint="@color/purple_700"
+            android:textColor="@android:color/white"
+            android:padding="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+</ScrollView>
+

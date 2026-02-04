@@ -1,0 +1,71 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/fondo_login3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="24dp">
+
+            <Button
+                android:id="@+id/btnHoy"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:text="📆 Ver Pagos de Hoy"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/purple_700"
+                android:textColor="@android:color/white"
+                android:paddingVertical="14dp"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:fontFamily="sans-serif-medium"
+                android:elevation="6dp"
+                android:stateListAnimator="@null"
+                android:background="@drawable/btn_rounded_purple" />
+
+            <Button
+                android:id="@+id/btnVencidos"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:text="⏰ Ver Pagos Vencidos"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/red_700"
+                android:textColor="@android:color/white"
+                android:paddingVertical="14dp"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:fontFamily="sans-serif-medium"
+                android:elevation="6dp"
+                android:stateListAnimator="@null"
+                android:background="@drawable/btn_rounded_red" />
+
+            <Button
+                android:id="@+id/btnProximos"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:text="🔜 Ver Pagos Próximos"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/teal_700"
+                android:textColor="@android:color/white"
+                android:paddingVertical="14dp"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:fontFamily="sans-serif-medium"
+                android:elevation="6dp"
+                android:stateListAnimator="@null"
+                android:background="@drawable/btn_rounded_teal" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
