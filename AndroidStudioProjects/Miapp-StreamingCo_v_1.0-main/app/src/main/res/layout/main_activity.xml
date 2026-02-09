@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/fondo_login3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="30dp"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Título -->
+            <TextView
+                android:text="Bienvenido"
+                android:textSize="42sp"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:layout_marginBottom="36dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.06" />
+
+            <!-- Contenedor redondeado -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="28dp"
+                android:elevation="6dp"
+                android:background="@drawable/fondo_tarjeta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:layout_marginHorizontal="16dp"
+                android:backgroundTint="#FFFFFF">
+
+                <EditText
+                    android:id="@+id/edtEmail"
+                    android:inputType="textEmailAddress"
+                    android:hint="Correo electrónico"
+                    android:padding="16dp"
+                    android:background="@drawable/edittext_border"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#212121"
+                    android:textColorHint="#88000000"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="28dp">
+
+                    <EditText
+                        android:id="@+id/edtPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Contraseña"
+                        android:inputType="textPassword"
+                        android:padding="16dp"
+                        android:background="@drawable/edittext_border"
+                        android:textColor="#212121"
+                        android:textColorHint="#88000000"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/togglePassword" />
+
+                    <ImageView
+                        android:id="@+id/togglePassword"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Ver contraseña"
+                        android:padding="10dp"
+                        android:src="@drawable/eyebrow"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:tint="#7B1FA2" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:text="Iniciar sesión"
+                    android:background="@drawable/button_primary"
+                    android:textColor="@android:color/white"
+                    android:padding="14dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:elevation="6dp"
+                    android:stateListAnimator="@null"
+                    android:layout_marginBottom="12dp" />
+
+                <Button
+                    android:id="@+id/btnRegister"
+                    android:text="Registrarse"
+                    android:background="@drawable/button_secondary"
+                    android:textColor="@android:color/white"
+                    android:padding="14dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:elevation="6dp"
+                    android:stateListAnimator="@null" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="12dp"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_card_cliente"
+    android:orientation="vertical"
+    android:elevation="6dp"
+    android:clipToPadding="false"
+    android:clipChildren="false">
+
+    <!-- CABECERA: Correo, Contraseña, Plataforma -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/tvCuenta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="📩 correo | 🔒 contraseña"
+            android:textColor="#212121"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:fontFamily="sans-serif-medium" />
+
+
+        <ImageButton
+            android:id="@+id/btnCopiarCorreo"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="6dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Copiar correo"
+            android:padding="6dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_copy"
+            android:tint="#000000" />
+
+        <!-- Botón agregar cliente -->
+        <ImageButton
+            android:id="@+id/btnAgregarCliente"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_input_add"
+            android:background="@drawable/bg_icon_button"
+            android:tint="#1565C0"
+            android:contentDescription="Agregar cliente"
+            android:layout_marginEnd="6dp" />
+
+
+        <ImageView
+            android:id="@+id/iconoPlataforma"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_netflix"
+            android:contentDescription="Icono plataforma"
+            android:layout_marginStart="12dp" />
+    </LinearLayout>
+
+    <!-- CLIENTES -->
+    <LinearLayout
+        android:id="@+id/contenedorClientes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="8dp"
+        android:divider="?android:dividerHorizontal"
+        android:showDividers="middle"
+        android:dividerPadding="8dp"
+        android:visibility="gone" />
+
+    <!-- DIVISOR -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="#CCCCCC"
+        android:visibility="visible" />
+
+    <!-- ACCIONES -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:baselineAligned="false">
+
+        <!-- Botón disponibilidad -->
+        <Button
+            android:id="@+id/btnDisponibilidadPantallas"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="Disponibilidad"
+            android:textSize="12sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:paddingHorizontal="8dp"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Botones de acción -->
+        <ImageButton
+            android:id="@+id/btnVerPantallas"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_view"
+            android:background="@drawable/bg_icon_button"
+            android:tint="#444"
+            android:contentDescription="Ver personas"
+            android:layout_marginEnd="6dp" />
+
+
+        <ImageButton
+            android:id="@+id/btnEditarCuenta"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_edit"
+            android:background="@drawable/bg_icon_button"
+            android:tint="#0D47A1"
+            android:contentDescription="Editar cuenta"
+            android:layout_marginEnd="6dp" />
+
+        <ImageButton
+            android:id="@+id/btnRenovarCuenta"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_input_add"
+            android:background="@drawable/bg_icon_button"
+            android:tint="#2E7D32"
+            android:contentDescription="Renovar cuenta"
+            android:layout_marginEnd="6dp" />
+
+        <ImageButton
+            android:id="@+id/btnEliminarCuenta"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_delete"
+            android:background="@drawable/bg_icon_button"
+            android:tint="#C62828"
+            android:contentDescription="Eliminar cuenta" />
+    </LinearLayout>
+</LinearLayout>

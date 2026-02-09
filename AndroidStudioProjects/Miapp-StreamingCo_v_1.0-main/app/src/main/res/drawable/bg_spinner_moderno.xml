@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FAFAFA" />
+            <corners android:radius="12dp"/>
+            <stroke android:width="2dp" android:color="#CCCCCC"/>
+        </shape>
+    </item>
+
+    <!-- Flecha (opcional si quieres ícono decorativo) -->
+    <item android:right="16dp" android:gravity="right|center_vertical">
+        <bitmap
+            android:src="@drawable/ic_arrow_drop_down"
+            android:gravity="right|center_vertical"
+            android:tileMode="disabled"/>
+    </item>
+</layer-list>
+

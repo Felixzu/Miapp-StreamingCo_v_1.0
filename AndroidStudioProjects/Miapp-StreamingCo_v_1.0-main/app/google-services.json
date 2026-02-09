@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "822988436448",
+    "project_id": "streamingco-28653",
+    "storage_bucket": "streamingco-28653.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:822988436448:android:c14157be3c7578ebee3185",
+        "android_client_info": {
+          "package_name": "com.softidea.operaciones_pildoras"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIDzZauQty-cNWsQLnnFq4Re0pzR--Qdg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
