@@ -1,0 +1,145 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="12dp"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_card_cliente"
+    android:orientation="horizontal"
+    android:elevation="6dp">
+
+    <!-- Ícono de la plataforma -->
+    <ImageView
+        android:id="@+id/imgPlataforma"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="12dp"
+        android:contentDescription="Icono de plataforma"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_launcher_foreground" /> <!-- Imagen por defecto -->
+
+    <!-- Información del cliente -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvNombre"
+            android:text="Nombre del cliente"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#222222"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvPlataforma"
+            android:text="🎬 Plataforma: Netflix"
+            android:textColor="#555555"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvCorreo"
+            android:text="Correo"
+            android:textColor="#555555"
+            android:layout_marginBottom="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvTelefono"
+            android:text="📱 Teléfono"
+            android:textColor="#555555"
+            android:layout_marginBottom="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvContrasena"
+            android:text="Contraseña"
+            android:textColor="#555555"
+            android:layout_marginBottom="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvFechaCompra"
+            android:text="📅 Compra: 12/06/2025"
+            android:textColor="#555555"
+            android:layout_marginBottom="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvFechaVencimiento"
+            android:text="🕒 Vence: 12/07/2025"
+            android:textColor="#555555"
+            android:layout_marginBottom="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvPrecio"
+            android:text="💵 $20.000"
+            android:textColor="#555555"
+            android:layout_marginBottom="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvTipoCuenta"
+            android:text="Tipo: Pantalla"
+            android:textColor="#555555"
+            android:layout_marginBottom="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvObservaciones"
+            android:text="📝 Observaciones"
+            android:textColor="#888888"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- Botones de acción -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/btnEditar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_edit"
+            android:background="@drawable/bg_icon_button"
+            android:tint="#1976D2"
+            android:contentDescription="Editar" />
+
+        <ImageButton
+            android:id="@+id/btnRenovar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_input_add"
+            android:background="@drawable/bg_icon_button"
+            android:tint="#388E3C"
+            android:layout_marginTop="8dp"
+            android:contentDescription="Renovar" />
+
+        <ImageButton
+            android:id="@+id/btnEliminar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_delete"
+            android:background="@drawable/bg_icon_button"
+            android:tint="#D32F2F"
+            android:layout_marginTop="8dp"
+            android:contentDescription="Eliminar" />
+    </LinearLayout>
+</LinearLayout>
