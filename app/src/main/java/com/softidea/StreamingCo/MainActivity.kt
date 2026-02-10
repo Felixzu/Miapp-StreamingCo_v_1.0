@@ -11,6 +11,11 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
+import androidx.compose.ui.test.isSelected
+import com.google.android.material.switchmaterial.SwitchMaterial
 import java.util.Calendar
 import java.util.Locale
 import com.google.firebase.FirebaseApp
@@ -18,19 +23,34 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var firebaseStorage:FirebaseStorage
     private lateinit var firestore:FirebaseFirestore
 
+
     private lateinit var dbHelper: DatabaseHelperInicio
+
 
     @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.main_activity)
+
+        val swDarkMode = findViewById<SwitchMaterial>(R.id.swDarkMode)
+
+        swDarkMode.setOnCheckedChangeListener { _, isSelected ->
+            if (isSelected) {
+                // Seleccionado
+                enableDarkMode()
+            } else {
+                // No seleccionado
+                disableDarkMode()
+            }
+        }
 
 
         insertarClientesDePrueba()
@@ -120,6 +140,19 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+
+
+    private fun enableDarkMode() {
+        AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
+        delegate.applyDayNight()
+    }
+
+    private fun disableDarkMode() {
+        AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
+        delegate.applyDayNight()
+    }
+
     private fun insertarClientesDePrueba() {
 
         val dbHelper = DatabaseHelperInicio(this)

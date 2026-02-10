@@ -62,6 +62,7 @@ dependencies {
     implementation(libs.firebaseAuth)
     implementation(libs.firebaseStorage)
     implementation(libs.firebaseStore)
+    implementation(libs.androidx.ui.test)
 
 
     testImplementation(libs.junit)

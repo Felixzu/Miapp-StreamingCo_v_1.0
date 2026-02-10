@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/swDarkMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="20dp"
+        android:checked="false"
+        android:text="🌙"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:thumbTint="@color/white"
+        android:trackTint="@color/switch_track"
+        android:padding="8dp" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
