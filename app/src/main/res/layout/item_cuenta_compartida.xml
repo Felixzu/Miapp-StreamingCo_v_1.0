@@ -42,16 +42,18 @@
             android:src="@drawable/ic_copy"
             android:tint="#000000" />
 
-        <!-- Botón agregar cliente -->
         <ImageButton
             android:id="@+id/btnAgregarCliente"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@android:drawable/ic_input_add"
+            android:src="@drawable/ic_agregar_usuario"
             android:background="@drawable/bg_icon_button"
-            android:tint="#1565C0"
+            android:scaleType="centerInside"
+            android:padding="6dp"
+            android:adjustViewBounds="true"
             android:contentDescription="Agregar cliente"
             android:layout_marginEnd="6dp" />
+
 
 
         <ImageView
